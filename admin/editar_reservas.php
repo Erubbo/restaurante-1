@@ -43,7 +43,7 @@ include('../includes/conexao.php');
         <br>
         <div class="reservation-form small-12 columns no-padding">
 
-                <form action="atualizar_reserva.php" method="post">
+                <form action="atualizar_reserva.php?idreserva=<?php echo $id?>" method="post">
 
                     <div class="form-part1 small-12 large-8 xlarge-7 columns no-padding">
 
@@ -65,6 +65,7 @@ include('../includes/conexao.php');
 
                         <input type="submit" name="submit" value="Reservar" />
                     </div>
+                </form>
 
     </main>
     <footer>

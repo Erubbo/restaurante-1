@@ -2,7 +2,7 @@
 
 include('../includes/conexao.php');
 
-$id = $_POST['idreserva'];
+$id = $_GET['idreserva'];
 
 $nome = $_POST['nome'];
 $telefone = $_POST['telefone'];
@@ -21,4 +21,4 @@ $conexao->query($sql);
 
 $conexao->close();
 
-header('location: listar-reservas.php');
+header('location: listar_reservas.php');

@@ -145,7 +145,7 @@
 
             <div class="reservation-form small-12 columns no-padding">
 
-                <form action="admin/cadastro_reserva.php" method="post" role="form">
+                <form action="admin/listar_reservas.php" method="post" role="form">
 
                     <div class="form-part1 small-12 large-8 xlarge-7 columns no-padding">
 
