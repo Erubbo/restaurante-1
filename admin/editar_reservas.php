@@ -1,5 +1,7 @@
-<?php
-include('../includes/conexao.php');
+<?php 
+
+include_once ('../includes/conexao.php');
+
 ?>
 
 <html>
@@ -34,43 +36,71 @@ include('../includes/conexao.php');
         <?php
         $id = $_GET['idreserva'];
         $sql = "SELECT * FROM tb_reservas WHERE id = $id";
-        $res = $conexao->query($sql); 
-        $dados = mysqli_fetch_array($res); 
+        $result = $conexao->query($sql);
+        $dados = mysqli_fetch_array($result); 
+        // echo '<pre>';
+        // var_dump($dados);
+        // exit;
         ?>
-        
+
         <main class="container">
-        <h1>Edição do prato</h1>
+        <h1>Edição da reserva</h1>
         <br>
-        <div class="reservation-form small-12 columns no-padding">
-
-                <form action="atualizar_reserva.php?idreserva=<?php echo $id?>" method="post">
-
-                    <div class="form-part1 small-12 large-8 xlarge-7 columns no-padding">
-
-                        <input type="text" name="nome" class="field" placeholder="Nome completo"  value="<?php echo $dados['nome']?>"/>
-
-                        <input type="text" name="email" class="field" placeholder="E-mail" value="<?php echo $dados['email']?>" />
-
-                        <textarea type="text" name="mensagem" class="field" placeholder="Mensagem"></textarea>
-
-
-                    </div>
-
-                    <div class="form-part2 small-12 large-3 xlarge-3 end columns no-padding">
-                        <input type="text" name="telefone" class="field" placeholder="Telefone" value="<?php echo $dados['telefone']?>" />
-
-                        <input type="datetime-local" name="data_reserva" class="field" placeholder="Data e hora" value="<?php $dados['data_reserva']?>" />
-
-                        <input type="text" name="numero_pessoas" class="field" placeholder="Número de pessoas" value="<?php $dados['numero_pessoas'] ?>" />
-
-                        <input type="submit" name="submit" value="Reservar" />
-                    </div>
-                </form>
-
+        <form class="form-horizontal" action="atualizar_reservas.php?idreserva=<?php echo $id?>" method="post" role="form" data-toggle="validator" enctype = "multipart/form-data">
+            <div class="form-group">
+                <label class="control-label col-sm-3">Nome*:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" name="nome" id="nome" value="<?php echo $dados['nome']?>" placeholder="Insira o nome">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3">Email*:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" name="email" id="email" value="<?php echo $dados['email']?>" placeholder="Insira o email">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3">Mensagem*:</label>
+                <div class="col-sm-9">
+                        <textarea class="form-control" id="exampleTextarea" rows="6" id="mensagem" name="mensagem" placeholder="<?php echo $dados['mensagem']?>" required></textarea>
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="form-group">
+            <label class="control-label col-sm-3">Telefone*:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" name="telefone" id="telefone" value="<?php echo $dados['telefone']?>" placeholder="Insira o telefone">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3">Data de cadastro*:</label>
+                <div class="col-sm-9">
+                    <input type="datetime-local" class="form-control" name="data" id="data" value="<?php echo $dados['data_cadastro']?>" placeholder="Insira a data e hora">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-3">Numero de pessoas*:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" name="pessoas" id="pessoas" value="<?php echo $dados['numero_pessoas']?>" placeholder="Insira o número de pessoas">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12 text-right">
+                    <input class = "btn btn-primary" id="submit" name="btnSend" type="submit" value="ENVIAR">
+                    <a name="formulario"></a>
+                    <div class="mensagem-alerta"></div>
+                </div>
+            </div>
+        </form>
     </main>
     <footer>
         <hr>
-        <div class="copyright">Desenvolvido com ❤ por gersu
+        <div class="copyright">Desenvolvido com ❤ por
             <a href="" target="_blank"></a>
         </div>  
     </footer>

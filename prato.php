@@ -1,4 +1,5 @@
 <?php
+
     include_once('includes/cabecalho.php');
     include_once('includes/conexao.php');
 
@@ -10,7 +11,6 @@
 
     $dados = $result->fetch_assoc();
 ?>
-
 		<div class="ghost-element">
 		</div>
            
@@ -24,7 +24,7 @@
                         <h4><?php echo $dados['categoria']?></h4>
                         <p><?php echo $dados['descricao']?></p>
 
-                        <h5><b>Preço: </b>R$ <?php echo $dados['preco']?></h5>
+                        <h5><b>Preço: </b><?php echo $dados['preco']?></h5>
                         <h5><b>Calorias: </b><?php echo $dados['calorias']?></h5> 
                     </div>
 
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="go-back small-12 columns no-padding">
-                    <a href="cardapio.html"><< Voltar ao Cardápio</a>
+                    <a href="cardapio.php"><< Voltar ao Cardápio</a>
                 </div>
 
             </div>
