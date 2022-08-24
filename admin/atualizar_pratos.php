@@ -1,21 +1,22 @@
 <?php
 
-include('conexao.php');
+include('../includes/conexao.php');
 
 $id = $_GET['idprato'];
 
-$id = $_POST['nome'];
-$nome = $_POST['codigo'];
-$email = $_POST['email'];
-$telefone = $_POST['telefone'];
-$assunto = $_POST['assunto'];
-$mensagem = $_POST['mensagem'];
+$nome = $_POST['nome'];
+$codigo = $_POST['codigo'];
+$categoria = $_POST['categoria'];
+$preco = $_POST['preco'];
+$descricao = $_POST['descricao'];
+$caloria = $_POST['calorias'];
+$destaque = $_POST['destaque'];
 
-$sql = "UPDATE 'tb_formulario' set nome = '$nome' email = '$email' telefone = '$telefone' assunto = '$assunto' mensagem = '$mensagem'
-WHERE id = $id";
+$sql = "UPDATE tb_pratos set nome = '$nome', codigo = '$codigo', categoria = '$categoria',
+descricao = '$descricao', preco = '$preco', calorias = '$caloria' ,destaque = '$destaque' where id = '$id' ";
 
 $conexao->query($sql);
 
 $conexao->close();
 
-header('location: listar-pratos.php');
+header('location: listar_pratos.php');

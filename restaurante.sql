@@ -1,1 +1,0 @@
-SELECT * FROM db_turismo;db_supermercadodb_turismodb_turismodb_restaurantedb_turismodb_restaurantedb_turismo

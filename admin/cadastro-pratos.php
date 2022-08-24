@@ -30,7 +30,7 @@
             <h1>Formulário de Contato</h1>
             <p>Acrescente um email válido para receber o email teste!</p>
             <br>
-            <form class="form-horizontal" action="cadastrar-pratos.php" method="post" role="form" data-toggle="validator" enctype="multipart/form-data">
+            <form class="form-horizontal" action="cadastrar_pratos.php" method="post" role="form" data-toggle="" enctype="multipart/form-data">
                 <div class="form-group">
                     <label class="control-label col-sm-3">Nome do Prato:</label>
                     <div class="col-sm-9">
@@ -79,15 +79,13 @@
                         <div class="help-block with-errors"></div>
                     </div>
                 </div>
-
                 <div class="form-group">
-                    <label class="control-label col-sm-3">Imagem do Prato:</label>
+                    <label class="control-label col-sm-3">Imagem Do Prato:</label>
                     <div class="col-sm-9">
                         <input type="file" class="form-control" name="imagem" id="imagem" placeholder="100" required>
                         <div class="help-block with-errors"></div>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <label class="control-label col-sm-3">Destaque:</label>
                     <div class="col-sm-9">
