@@ -2,6 +2,10 @@
 
 include('../includes/conexao.php');
 
+if(isset($_GET['idprato']) && isset($_POST['nome']) );
+
+$id = $_GET['idprato'];
+
 $imagem = $_FILES['imagem'];
 $nome = $_POST['nome'];
 $codigo = $_POST['codigo'];
